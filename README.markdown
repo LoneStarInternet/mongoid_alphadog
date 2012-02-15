@@ -31,6 +31,15 @@ Add mongoid_alphadog to your Gemfile:
 
     gem 'mongoid_alphadog'
 
+IMPORTANT NOTE
+--------------
+
+Keep in mind that adding this to an existing app won't necessarily work immediately. Since alphadog does its magic on a before_save added to your model, you will want to make sure you re-save all the documents in collections to which you add Mongoid::Alphadog. Easy, not-necessarily-performant way:
+
+    Item.all.each{ |i| i.save }
+
+Maybe someday I'll add a fancy rake task or something to help you alphadog-ify pre-existing documents. But for now, you're on your own.
+
 Alphabetizing a Single Field
 ----------------------------
 
@@ -91,5 +100,4 @@ Indexes
 -------
 
 Mongoid_Alphadog automatically adds indexes on the XXX_loweralpha fields. Make sure to generate your mongodb indexes by whichever means you prefer.
-  
   

@@ -61,7 +61,7 @@ If you need your results ordered the other way, for now you'll just have to do i
 
 So if you wanted, say, the Items from above to be ordered from Z to A, you would do this:
 
-  Item.order_by([[:name_loweralpha, :desc]])
+    Item.order_by([[:name_loweralpha, :desc]])
   
 Alphabetizing Multiple Fields
 ----------------------------- 
@@ -81,11 +81,11 @@ Alphadog can handle multiple fields in a document too!
     
 The _alphabetized_by_ scope can handle multi-field ordering:
 
-  User.alphabetized_by(:first_name, :last_name, :favorite_color)
+    User.alphabetized_by(:first_name, :last_name, :favorite_color)
 
 Again, this will do all of the fields in :asc order (A to Z). If you want to do it differently, you'll have to build up your own _order_by_
   
-  User.order_by([[:first_name_loweralpha, :desc], [:last_name_loweralpha, :asc], [:favorite_color_loweralpha, :desc]])
+    User.order_by([[:first_name_loweralpha, :desc], [:last_name_loweralpha, :asc], [:favorite_color_loweralpha, :desc]])
   
 Indexes
 -------

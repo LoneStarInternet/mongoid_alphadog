@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = MongoidAlphadog::VERSION
   s.authors     = ["Matt Patterson", "Lone Star Internet"]
   s.email       = ["mpatterson@lone-star.net"]
-  s.homepage    = "http://lone-star.net"
+  s.homepage    = "https://github.com/LoneStarInternet/mongoid_alphadog"
   s.summary     = %q{Case-insensitive alphabetizing for Mongoid document models}
   s.description = %q{A simple little gem that makes it easy to handle case-insensitive alphabetizing for Mongoid document models}
 

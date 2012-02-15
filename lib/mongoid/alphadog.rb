@@ -13,7 +13,7 @@ module Mongoid
           meth = "set_#{f}_loweralpha".to_sym
           class_eval <<-RUBY
             before_save do
-              self.send("#{symbol}=".to_sym, self.send(f.to_sym).downcase)
+              self.send("#{symbol}=".to_sym, self.send(f.to_sym).try(:downcase))
             end
           RUBY
         }

@@ -9,7 +9,7 @@ module Mongoid
         fields.map(&:to_s).each { |f|
           symbol = "#{f}_loweralpha".to_sym
           field(symbol, type: String)
-          index({symbol: 1})
+          index({symbol => 1})
           meth = "set_#{f}_loweralpha".to_sym
           class_eval <<-RUBY
             before_save do
